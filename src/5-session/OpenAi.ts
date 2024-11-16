@@ -1,6 +1,6 @@
 import OpenAI, { AzureOpenAI } from "openai";
 import { AzureKeyCredential } from "@azure/core-auth";
-import { Config } from "./Config";
+import { Config } from "./Config.js";
 
 export enum OpenAiProvider {
   OpenAi = "openai",
