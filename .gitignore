@@ -1,13 +1,19 @@
-# https://github.com/github/gitignore
+logs
+.DS_Store
+.env
 node_modules
 .npm
-
 dist
 build
 out
-
-logs
-.DS_Store
-
 __pycache__
-.env
+
+# https://github.com/swkBerlin/kata-bootstraps/blob/master/.gitignore
+*~
+.*sw[a-z]
+*.pyc
+*.bundle
+.idea/
+.idea_modules/
+*.iml
+target/
