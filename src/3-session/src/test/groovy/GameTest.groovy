@@ -2,10 +2,6 @@ import spock.lang.Specification
 
 class GameTest extends Specification {
 
-    def setup() {
-
-    }
-
     def "should initialize game with amount of cells"() {
         given: "game with cells"
         List<Position> cells = [

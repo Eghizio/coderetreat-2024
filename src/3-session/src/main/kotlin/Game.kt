@@ -17,12 +17,12 @@ class Game(positions: List<Position>) {
     }
 }
 
-//interface GameCommand {
+// interface GameCommand {
 //    fun invoke(game: Game): Game
-//}
+// }
 //
-//data class GetNeighboursCommand(val cell: Position, val cells: Set<Position>) : GameCommand {
+// data class NeighboursCommand(val cell: Position, val cells: Set<Position>) : GameCommand {
 //    override fun invoke(game: Game): Game {
 //        return game
 //    }
-//}
+// }
