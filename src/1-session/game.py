@@ -1,3 +1,4 @@
 class Game:
-    def __init__(self):
-        raise Exception("Not implemented")
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
