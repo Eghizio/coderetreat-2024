@@ -29,12 +29,12 @@ class GameTest extends Specification {
         List<Position> cells = [neighbour1, neighbour2, loneCell]
         Game game = new Game(cells)
 
-        then:
+        when:
         def count1 = game.getNeighboursCountForCell(neighbour1)
         def count2 = game.getNeighboursCountForCell(neighbour2)
         def count3 = game.getNeighboursCountForCell(loneCell)
 
-        expect:
+        then:
         count1 == 1
         count2 == 1
         count3 == 0

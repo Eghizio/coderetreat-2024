@@ -2,7 +2,18 @@ class Game(positions: List<Position>) {
     private val cells: HashSet<Position> = positions.toHashSet()
 
     fun getNeighboursCountForCell(cell: Position): Int {
-        return -1
+        val positionsAround = setOf(
+            cell.top(),
+            cell.right(),
+            cell.bottom(),
+            cell.left(),
+            cell.topRight(),
+            cell.topLeft(),
+            cell.bottomRight(),
+            cell.bottomLeft()
+        )
+
+        return cells.intersect(positionsAround).size
     }
 }
 
