@@ -32,4 +32,16 @@ describe(`Game`, () => {
     // Then
     assert.strictEqual(game.cells.length, 0);
   });
+
+  it(`cell should decide if survives`, () => {
+    // Given
+    const cell = new Cell(0, 0);
+    const cells = [cell];
+
+    // When
+    cell.shouldSeppuku(cells);
+
+    // Then
+    assert.strictEqual(cells.length, 0);
+  });
 });
