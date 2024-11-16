@@ -97,6 +97,10 @@ describe(`calculate()`, () => {
 
   results.forEach(({ x, y }) => {
     it(`should call log`, (context) => {
+      // Given
+      const x = 10;
+      const y = -2;
+
       // When
       calculate(x, y);
 
