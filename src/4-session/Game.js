@@ -11,6 +11,9 @@ export class Cell {
   constructor(x, y) {}
 
   shouldSeppuku(cells) {
+    const neigbours = cells.length;
+    if (neigbours === 3) return;
+
     cells.pop();
   }
 }

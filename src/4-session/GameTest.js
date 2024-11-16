@@ -44,4 +44,16 @@ describe(`Game`, () => {
     // Then
     assert.strictEqual(cells.length, 0);
   });
+
+  it(`cell should survive when enugh neighbours`, () => {
+    // Given
+    const cell = new Cell(0, 0);
+    const cells = [cell, new Cell(0, 1), new Cell(1, 0)];
+
+    // When
+    cell.shouldSeppuku(cells);
+
+    // Then
+    assert.strictEqual(cells.length, 3);
+  });
 });
