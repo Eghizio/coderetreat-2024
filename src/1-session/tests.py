@@ -25,13 +25,29 @@ class TestGame(unittest.TestCase):
             fields_count = width * height
             
             # When
-            
             game = Game(width, height)
 
             # Then
             self.assertNotEqual(game.board, None)
             self.assertEqual(isinstance(game.board, (dict)), True)
             self.assertEqual(len(game.board), fields_count)
+
+    def test_should_create_board_populated_with_fields(self):
+        # Given
+        width = 10
+        height = 10
+        game = Game(width, height)
+
+        # When
+        field = list(game.board.values())[0]
+
+        # Then
+        self.assertNotEqual(field, None)
+        self.assertEqual(field.x, 0)
+        self.assertEqual(field.y, 0)
+        self.assertNotEqual(field.alive, None)
+
+
 
 if __name__ == "__main__":
     unittest.main()
