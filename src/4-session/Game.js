@@ -7,4 +7,8 @@ export class Game {
   constructor(cells) {
     this.cells = cells;
   }
+
+  next() {
+    this.cells = [];
+  }
 }

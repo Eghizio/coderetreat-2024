@@ -20,4 +20,16 @@ describe(`Game`, () => {
     // Then
     assert.strictEqual(game.cells.length, 1);
   });
+
+  it(`alone cell dies`, () => {
+    // Given
+    const cells = [new Cell(0, 0)];
+    const game = new Game(cells);
+
+    // When
+    game.next();
+
+    // Then
+    assert.strictEqual(game.cells.length, 0);
+  });
 });
