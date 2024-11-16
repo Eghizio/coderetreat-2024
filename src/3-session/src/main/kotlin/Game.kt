@@ -1,5 +1,3 @@
-class Game {
-    fun hi(){
-        TODO()
-    }
+class Game(positions: List<Position>) {
+    private val cells: HashSet<Position> = positions.toHashSet()
 }
