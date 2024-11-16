@@ -8,11 +8,25 @@
 */
 
 export class Cell {
-  constructor(x, y) {}
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
 
   shouldSeppuku(cells) {
-    const neigbours = cells.length;
+    const neigbours = cells.filter((cell) => {
+      if (this.x === cell.x && this.y === cell.y) return false;
+
+      const distanceX = Math.pow(this.x - cell.x, 2);
+      const distanceY = Math.pow(this.y - cell.y, 2);
+
+      if (distanceX > 1 || distanceY > 1) return false;
+
+      return true;
+    }).length;
+
     if (neigbours === 3) return;
+    if (neigbours === 2) return;
 
     cells.pop();
   }

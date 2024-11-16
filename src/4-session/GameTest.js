@@ -45,7 +45,7 @@ describe(`Game`, () => {
     assert.strictEqual(cells.length, 0);
   });
 
-  it(`cell should survive when enugh neighbours`, () => {
+  it(`cell should survive when enough neighbours`, () => {
     // Given
     const cell = new Cell(0, 0);
     const cells = [cell, new Cell(0, 1), new Cell(1, 0)];
@@ -55,5 +55,17 @@ describe(`Game`, () => {
 
     // Then
     assert.strictEqual(cells.length, 3);
+  });
+
+  it(`cell should die when no neigbours`, () => {
+    // Given
+    const cell = new Cell(0, 0);
+    const cells = [cell, new Cell(0, 2), new Cell(2, 0)];
+
+    // When
+    cell.shouldSeppuku(cells);
+
+    // Then
+    assert.strictEqual(cells.length, 2);
   });
 });
