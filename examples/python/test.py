@@ -44,6 +44,15 @@ class TestCalculate(unittest.TestCase):
             with self.assertRaises(NotNumberError):
                 calculate(x, y)
 
+    def test_no_exception_with_valid_inputs(self):
+        for x, y, _ in self.results:
+            try:
+                calculate(x, y)
+            except NotNumberError:
+                self.fail("calculate(x, y) raised NotNumberError unexpectedly!")
+            except Exception as e:
+                self.fail(e)
+
     def test_valid_inputs(self):
         for x, y, expected in self.results:
             self.assertEqual(calculate(x, y), expected)
