@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game of AI</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Game of AI ✨</h1>
+      <p>Game of Life using AI for iterating next generations.</p>
+    </header>
+    <main class="layout">
+      <h2>Generation <span id="generation">{{generation}}</span></h2>
+      <section>
+        <h4>Cells count: <span id="cells-count">0</span></h4>
+        <button type="button" id="reset">Reset game</button>
+        <button type="button" id="stop">Kill game</button>
+      </section>
+      <canvas id="game" width="1500" height="1500" data-size=""></canvas>
+    </main>
+  </body>
+</html>

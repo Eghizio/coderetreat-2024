@@ -1,5 +1,6 @@
 import { z } from "zod";
 import type { GPT } from "./OpenAi";
+import { randomInt } from "./utils";
 
 // Game -> Set<Cell<x, y>>
 
@@ -17,6 +18,10 @@ export class Cell {
   constructor(x: number, y: number) {
     this.x = x;
     this.y = y;
+  }
+
+  static random() {
+    return new Cell(randomInt(), randomInt());
   }
 
   toString() {
@@ -37,6 +42,7 @@ export type ChatResponse = z.infer<typeof ChatResponseSchema>;
 export class Game {
   public cells: Set<Cell>;
 
+  // Todo: Let the Ai generate initial state with some structures.
   constructor(cells: Cell[], private chat: GPT) {
     this.cells = new Set(cells);
   }
@@ -64,6 +70,9 @@ export class Game {
     return this.mapAnswerCells(answer);
   }
 
+  // Todo: Create initial Agent prompt with instructions for further messages.
+  // Todo: In the next messages you will receive cells.
+  // Todo: Send Array<Cell>.
   private createPromptText() {
     return `
     We are playing Conways Game of Life.
@@ -77,7 +86,7 @@ export class Game {
 
   toString() {
     const count = this.cells.size;
-    const objects = Array.from(this.cells).join(", ");
+    const objects = Array.from(this.cells).join(",");
     return `Set(${count}) { ${objects} }`;
   }
 }
